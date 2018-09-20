@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MIMobileApp.HomePage" xmlns:local="clr-namespace:MIMobileApp">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10" Margin="45,0,0,10">
+            <Image HorizontalOptions="Center" x:Name="LogoIcon"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Sign Out"
+                     Clicked="Handle_Clicked"/>
+    </TabbedPage.ToolbarItems>
+    
+    <local:NewsPage Title="News"/>
+    <local:VideoListPage Title="Videos"/>
+    <local:PlayerPage Title="Players"/>
+    <local:ResultsLadderPage Title="Results"/>
+    <local:FixturesPage Title="Fixtures"/>
+    <local:GDPage Title="Game Day PDFs"/>
+</TabbedPage>

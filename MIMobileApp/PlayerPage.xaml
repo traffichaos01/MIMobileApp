@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MIMobileApp.PlayerPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,-10,0,0" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="Player Info" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Grid MinimumHeightRequest="200" RowSpacing="10" Padding="0" Margin="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="250"/>
+            </Grid.RowDefinitions>
+                <Label Text="Goal Leaders" Grid.Row="0" Margin="0,0,0,-20" HorizontalTextAlignment="Center"/>
+                <ListView x:Name="GoalListView" Grid.Row="1" Margin="-5,0,10,0">
+                    <ListView.Header>
+                        <Grid>
+                            <Label Text="Name" HorizontalOptions="Start" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                            <Label Text="Points" HorizontalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Label Text="{Binding StrFullName}" HorizontalOptions="Start" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding IntGoals}" HorizontalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="Point Leaders" Grid.Row="2" Margin="0,0,0,-20" HorizontalTextAlignment="Center"/>
+                <ListView x:Name="PointListView" Grid.Row="3" Margin="-5,0,10,0">
+                    <ListView.Header>
+                        <Grid>
+                            <Label Text="Name" HorizontalOptions="Start" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                            <Label Text="Points" HorizontalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                        <Label Text="{Binding StrFullName}" HorizontalOptions="Start" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                                        <Label Text="{Binding IntPoints}" HorizontalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+

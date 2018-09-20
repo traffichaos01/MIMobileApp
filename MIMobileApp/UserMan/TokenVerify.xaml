@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MIMobileApp.UserMan.TokenVerify"
+             BackgroundColor="{StaticResource LoginBlue}">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+            <Image x:Name="MILogoImage"
+               Aspect="AspectFit"
+               Margin="0,0,0,10"
+               HorizontalOptions="FillAndExpand"/>
+            <Label Text="Enter Token Below"
+                   TextColor="{StaticResource LoginWhite}"/>
+            <Entry Keyboard="Numeric"
+                   x:Name="TokenEntry"/>
+            <Button x:Name="TokenSubmit"
+                    Text="Submit"
+                    Clicked="Handle_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

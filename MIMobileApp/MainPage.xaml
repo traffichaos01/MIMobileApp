@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MIMobileApp" x:Class="MIMobileApp.MainPage" BackgroundColor="{StaticResource LoginBlue}">
+    <!--<NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10">
+            <Label Text="Hello"/>
+        </StackLayout>
+    </NavigationPage.TitleView>-->
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <StackLayout HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                <Image x:Name="MILogoImage"
+                   Aspect="AspectFit"
+                   Margin="0,0,0,10"
+                   HorizontalOptions="FillAndExpand"/>
+                <Label Text="Login to the Melbourne Ice!"
+                       TextColor="{StaticResource LoginWhite}"/>
+                <Label Text="Email"
+                       TextColor="{StaticResource LoginWhite}"/>
+                <Entry x:Name="EmailEntry"
+                   Keyboard="Email"/>
+                <Label Text="Password"
+                       TextColor="{StaticResource LoginWhite}"/>
+                <Entry x:Name="PasswordEntry"
+                   IsPassword="True"/>
+                <Label Text="Forgotten your Password?"
+                    x:Name="ForgotButton"
+                    TextColor="#007AFF"
+                    HorizontalTextAlignment="Start">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="TapGestureRecognizer_Tapped"
+                            NumberOfTapsRequired="1"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Button Text="Login"
+                    x:Name="LoginSubmit"
+                    Clicked="LoginSubmit_Clicked"/>
+                <Button Text="Sign Up Here!"
+                        x:Name="SignupButton"
+                        Clicked="SignupButton_Clicked"/>
+            </StackLayout>
+            <StackLayout x:Name="LoadingLayout" IsVisible="false" Padding="12" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+                <WebView x:Name="Browser" IsVisible="false" WidthRequest="1000" HeightRequest="1000"/>
+                <ActivityIndicator IsRunning="false" x:Name="LoadingSymbol" Color="#8c939e" VerticalOptions="Center"/>
+            </StackLayout>
+        </AbsoluteLayout>
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MIMobileApp.ResultsLadderPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10,-10,0,0" Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid MinimumHeightRequest="200" RowSpacing="10" Padding="0" Margin="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="400"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+                <Label Text="Ladder" Grid.Row="0" Margin="0,0,0,-20" HorizontalTextAlignment="Center"/>
+                <ListView x:Name="LadderListView" Grid.Row="1" Margin="-5,0,10,0">
+                    <ListView.Header>
+                        <Grid>
+                            <Label Text="Team Name" HorizontalOptions="Start" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                            <Label Text="Wins" HorizontalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Margin="0,0,60,0"/>
+                            <Label Text="Points" HorizontalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Image Source="{Binding StrLogoUrl}" HorizontalOptions="Start"/>
+                                    <Label Text="{Binding StrTeamName}" HorizontalOptions="Start" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" Margin="60,0,0,0"/>
+                                    <Label Text="{Binding IntGamesWon}" HorizontalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="End" Margin="0,0,60,0"/>
+                                    <Label Text="{Binding IntPoints}" HorizontalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="Previous Results" Grid.Row="2" Margin="0,0,0,-20" HorizontalTextAlignment="Center"/>
+                <ListView x:Name="ResultsListView" Grid.Row="3" Margin="-5,0,10,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                        <Label Text="{Binding StrHomeTeam}" HorizontalOptions="Start" VerticalTextAlignment="Center" HorizontalTextAlignment="Start"/>
+                                        <Label Text="{Binding StrScore}" HorizontalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                                        <Label Text="{Binding StrAwayTeam}" HorizontalOptions="End" VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
