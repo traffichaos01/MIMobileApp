@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 
 namespace MIMobileApp.Classes
 {
+    //Videos.cs
+    //Get and Set VideosItems
     public class Videos
     {
         public partial class VideosItems
@@ -24,6 +26,7 @@ namespace MIMobileApp.Classes
             public string StrVideoPhotoUrl { get; set; }
         }
 
+        //Convert JSON string to List of Objects
         public partial class VideosItems
         {
             public static List<VideosItems> FromJson(string json)

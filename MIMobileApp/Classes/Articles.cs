@@ -8,7 +8,7 @@ using System.Globalization;
 
 namespace MIMobileApp.Classes
 {
-    public class Articles     {         public partial class ArticlesItems
-        {             [JsonProperty("$id")]             public long Id { get; set; }              [JsonProperty("intArticleID")]             public string intArticleId { get; set; }              [JsonProperty("strArticleTitle")]             public string strArticleTitle { get; set; }              [JsonProperty("strArticlePhotoUrl")]             public string strArticlePhotoUrl { get; set; }              [JsonProperty("strArticleURL")]             public string strArticleURL { get; set; }         }          public partial class ArticlesItems
+    public class Articles     {         //Articles.cs Class         //Get and Set ArticlesItems         public partial class ArticlesItems
+        {             [JsonProperty("$id")]             public long Id { get; set; }              [JsonProperty("intArticleID")]             public string intArticleId { get; set; }              [JsonProperty("strArticleTitle")]             public string strArticleTitle { get; set; }              [JsonProperty("strArticlePhotoUrl")]             public string strArticlePhotoUrl { get; set; }              [JsonProperty("strArticleURL")]             public string strArticleURL { get; set; }         }          //Convert JSON string to List of Objects         public partial class ArticlesItems
         {             public static List<ArticlesItems> FromJson(string json)             {                 return JsonConvert.DeserializeObject<List<ArticlesItems>>(json);             }         }     }
 }

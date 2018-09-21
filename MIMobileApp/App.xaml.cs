@@ -10,7 +10,7 @@ namespace MIMobileApp
         public App()
         {
             InitializeComponent();
-
+            //Initializes app and sets the Mainpage of the app based on user info
             if (Application.Current.Properties.ContainsKey("User"))
             {
                 if (Application.Current.Properties["User"].ToString() == "User")

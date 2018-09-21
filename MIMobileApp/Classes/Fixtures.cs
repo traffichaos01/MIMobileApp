@@ -6,6 +6,8 @@ namespace MIMobileApp.Classes
 {
     public class Fixtures
     {
+        //Fixtures.cs
+        //Get and Set FixturesItems
         public partial class FixturesItems
         {
             [JsonProperty("$id")]
@@ -39,6 +41,7 @@ namespace MIMobileApp.Classes
         
         }
 
+        //Convert JSON string to List of Objects
         public partial class FixturesItems
         {
             public static List<FixturesItems> FromJson(string json)

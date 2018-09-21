@@ -1,6 +1,8 @@
 ﻿using System;
 namespace MIMobileApp.Classes
 {
+    //SignUpUser.cs
+    //Get and Set SignUpUser
     class SignUpUser
     {
         public string strFirstName { get; set; }

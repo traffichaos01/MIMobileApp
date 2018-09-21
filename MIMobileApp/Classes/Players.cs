@@ -6,6 +6,8 @@ namespace MIMobileApp.Classes
 {
     public class Players
     {
+        //Players.cs
+        //Get and set PlayersItems
         public partial class PlayersItems
         {
             [JsonProperty("$id")]
@@ -47,6 +49,7 @@ namespace MIMobileApp.Classes
 
         }
 
+        //Convert JSON string to List of Objects
         public partial class PlayersItems
         {
             public static List<PlayersItems> FromJson(string json)

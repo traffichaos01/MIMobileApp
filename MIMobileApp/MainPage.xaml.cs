@@ -27,6 +27,7 @@ namespace MIMobileApp
 
         private async void LoginSubmit_Clicked(object sender, EventArgs e)
         {
+            //Disallow Null Values
             if (EmailEntry.Text == null || PasswordEntry.Text == null)
             {
                 await DisplayAlert("Warning", "An email and password must be entered in order to continue", "Ok");
@@ -41,8 +42,6 @@ namespace MIMobileApp
                     //Declare Login Object
                     LoginUser currentUser = new LoginUser();
                     currentUser.strEmail = EmailEntry.Text.Trim();
-
-
                     currentUser.strPassword = PasswordEntry.Text.Trim();
 
                     //Establish connection with database and check whether the the login matches
@@ -53,6 +52,8 @@ namespace MIMobileApp
                     var json = JsonConvert.SerializeObject(currentUser);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
                     var response = await client.PostAsync(uri, content);
+
+                    //Test POST Request to determine and set the itemsource for list view
                     if (response.StatusCode == System.Net.HttpStatusCode.Accepted)
                     {
                         Application.Current.Properties["User"] = "User";
@@ -62,12 +63,14 @@ namespace MIMobileApp
                         await Navigation.PushModalAsync(new NavigationPage(new HomePage()));
 
                     }
+                    //Tell User that items don't match
                     else
                     {
                         UserDialogs.Instance.HideLoading();
                         await DisplayAlert("Warning", "The Email and Password entered do not match, please try again", "Ok");
                     }
                 }
+                //Catch exception
                 catch (Exception ex)
                 {
                     UserDialogs.Instance.HideLoading();
@@ -77,11 +80,12 @@ namespace MIMobileApp
             }
         }
 
+        //If Forgot Password is tapped, change page
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ForgotPassword());
         }
-
+        //If Sign Up is tapped, change page
         private void SignupButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SignupPage());

@@ -6,6 +6,8 @@ namespace MIMobileApp.Classes
 {
     public class Ladder
 	{
+        //LadderItems.cs
+        //Get and Set LadderItems
         public partial class LadderItems
         {
             [JsonProperty("$id")]
@@ -33,6 +35,7 @@ namespace MIMobileApp.Classes
             public string StrLogoUrl { get; set; }
         }
 
+        //Convert JSON string to List of Objects
         public partial class LadderItems
         {
             public static List<LadderItems> FromJson(string json)

@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 
 namespace MIMobileApp.Classes
 {
+    //PDFs.cs
+    //Get and Set PDFs
     public class PDFs
     {
 		public partial class PDFItems
@@ -27,6 +29,7 @@ namespace MIMobileApp.Classes
         public DateTimeOffset DtPDF { get; set; }
         }
 
+        //Convert JSON string to List of Objects
         public partial class PDFItems
         {
             public static List<PDFItems> FromJson(string json)
